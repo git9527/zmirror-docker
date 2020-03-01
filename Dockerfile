@@ -41,7 +41,7 @@ RUN cd /var/www && \
     cat /var/www/${MIRROR_NAME}/config.py
 
 #Apache2 conf cleaning according to https://github.com/aploium/zmirror-onekey/blob/master/deploy.py
-RUN rm -rf /etc/apache2/sites-enabled/000-default.conf && \
+RUN rm -rf /etc/apache2/sites-enabled/*.conf && \
     rm -rf /etc/apache2/conf-enabled/apache2-doc.conf && \
     rm -rf /etc/apache2/conf-enabled/security.conf
 
