@@ -59,7 +59,6 @@ VOLUME ["/etc/letsencrypt"]
 
 # PORTS
 EXPOSE 80
-EXPOSE 443
 
 ENTRYPOINT ["/ENTRY.sh"]
 
