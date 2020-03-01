@@ -61,8 +61,8 @@ VOLUME ["/etc/letsencrypt"]
 # PORTS
 EXPOSE 80
 
-#ENTRYPOINT ["/ENTRY.sh"]
+ENTRYPOINT ["/ENTRY.sh"]
 
-CMD sh ENTRY.sh $DOMAIN $ANSWER $ANSWER_HASH
-#CMD ["start"]
+#CMD sh ENTRY.sh $DOMAIN $ANSWER $ANSWER_HASH
+CMD ["start"]
 #CMD ["apache2ctl", "-D", "FOREGROUND"]
