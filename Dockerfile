@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Min Yu <yumin9822@gmail.com>
+MAINTAINER git9527 <birdb3900@gmail.com>
 
 #Please make sure the DOMAIN has A record which is same with your server ip. Or the SSL certifications will not be issued by letsencrypt
 
@@ -11,7 +11,7 @@ ENV MIRROR_NAME google
 
 #python3 and flask requests cchardet fastcache dependencies installation
 #cron可选安装。
-RUN apt-get update && \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+RUN apt-get update && apt-get install tzdata && \cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     apt-get install -y build-essential patch binutils make devscripts nano libtool libssl-dev libxml2 \
                        libxml2-dev software-properties-common python-software-properties dnsutils \
                        git wget curl python3 python3-dev iftop cron && \
