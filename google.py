@@ -281,8 +281,8 @@ verbose_level = 2 # Added by zmirror-onekey
 #    请看 `config_default.py` 文件中的 `Human/IP verification` 设置区段
 #    PS: 下面的设置都支持中文, 可以自行修改成中文
 human_ip_verification_enabled = True
-human_ip_verification_answers_hash_str = '${ANSWER_HASH}'  # Secret key, please keep it secret
+human_ip_verification_answers_hash_str = '{ANSWER_HASH}'  # Secret key, please keep it secret
 human_ip_verification_questions = [
-    ["why do you use this?", "${ANSWER}", ""],
+    ["why do you use this?", "{ANSWER}", ""],
 ]
 human_ip_verification_identity_record = []
