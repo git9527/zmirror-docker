@@ -52,8 +52,9 @@ ADD zmirror-apache-boilerplate.conf /etc/apache2/conf-enabled/zmirror-apache-boi
 #apache2-https.conf and apache2-http.conf are two virtual host templates from zmirror-onekey
 #ADD zmirror-http-redirection.conf /etc/apache2/sites-enabled/zmirror-http-redirection.conf
 #ADD apache2-https.conf /etc/apache2/sites-enabled/apache2-https.conf.sample
-ADD apache2-http.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
+#ADD apache2-http.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
 #ADD no-ip-access.conf /etc/apache2/sites-enabled/no-ip-access.conf
+ADD zmirror_google.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
 
 
 ADD ENTRY.sh /
