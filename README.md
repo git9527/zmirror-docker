@@ -4,6 +4,6 @@
 A good instruction is here https://github.com/vimagick/dockerfiles/tree/master/certbot
 
 2. To Run a google mirror by this docker 
-`docker run -d --name somezmirror -p 80:80 -p 443:443 -e DOMAIN=yourdomain.example.com -v /etc/letsencrypt:/etc/letsencrypt yumin9822/zmirror
+`docker run -d --name somezmirror -p 80:80 -p 443:443 -e DOMAIN=yourdomain.example.com -v /etc/letsencrypt:/etc/letsencrypt git9527/zmirror-docker
 `
 Please remember to change the DOMAIN setting.
