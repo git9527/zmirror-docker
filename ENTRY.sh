@@ -7,6 +7,7 @@ if [ "${DOMAIN}" == "**None**" ]; then
 fi
 
 /bin/sed -i "s/{{domain}}/${DOMAIN}/g" /etc/apache2/sites-enabled/zmirror-google-http.conf
+/bin/cat /var/www/google/config.py
 
 case "$1" in
 start)
