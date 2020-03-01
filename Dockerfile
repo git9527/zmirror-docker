@@ -34,11 +34,7 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/apache2 && \
 #Reference https://github.com/aploium/zmirror/wiki/%E5%9C%A8%E4%B8%80%E5%8F%B0VPS%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AAzmirror%E9%95%9C%E5%83%8F
 RUN cd /var/www && \
     git clone https://github.com/aploium/zmirror ${MIRROR_NAME} && chown -R www-data.www-data ${MIRROR_NAME} && \
-    wget https://raw.githubusercontent.com/git9527/zmirror-docker/master/google.py -O /var/www/${MIRROR_NAME}/config.py && \
-    sed -i "s/{DOMAIN}/${DOMAIN}/g" /var/www/${MIRROR_NAME}/config.py && \
-    sed -i "s/{ANSWER_HASH}/${ANSWER_HASH}/g" /var/www/${MIRROR_NAME}/config.py && \
-    sed -i "s/{ANSWER}/${ANSWER}/g" /var/www/${MIRROR_NAME}/config.py && \
-    cat /var/www/${MIRROR_NAME}/config.py
+    wget https://raw.githubusercontent.com/git9527/zmirror-docker/master/google.py -O /var/www/${MIRROR_NAME}/config.py
 
 #Apache2 conf cleaning according to https://github.com/aploium/zmirror-onekey/blob/master/deploy.py
 RUN rm -rf /etc/apache2/sites-enabled/*.conf && \
@@ -65,7 +61,8 @@ VOLUME ["/etc/letsencrypt"]
 # PORTS
 EXPOSE 80
 
-ENTRYPOINT ["/ENTRY.sh"]
+#ENTRYPOINT ["/ENTRY.sh"]
 
-CMD ["start"]
+CMD sh ENTRY.sh $DOMAIN $ANSWER $ANSWER_HASH
+#CMD ["start"]
 #CMD ["apache2ctl", "-D", "FOREGROUND"]
