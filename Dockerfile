@@ -5,8 +5,6 @@ MAINTAINER git9527 <birdb3900@gmail.com>
 
 ENV DOMAIN **None**
 ENV MIRROR_NAME google
-ENV ANSWER **None**
-ENV ANSWER_HASH **None**
 #ENV SSLCert **None**
 #ENV SSLKEY **None**
 #ENV SSLChain **None**
