@@ -30,6 +30,8 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/apache2 && \
     a2enmod rewrite mime include headers filter expires deflate autoindex setenvif ssl http2 && \
     apt-get install -y libapache2-mod-wsgi-py3
 
+RUN apt-get install -y net-tools iputils-ping
+
 #Zmirror installation,如果要安装另外的例如YouTube镜像，请修改此段。
 #Reference https://github.com/aploium/zmirror/wiki/%E5%9C%A8%E4%B8%80%E5%8F%B0VPS%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AAzmirror%E9%95%9C%E5%83%8F
 RUN cd /var/www && \
