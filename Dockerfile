@@ -7,6 +7,7 @@ ENV DOMAIN **None**
 ENV MIRROR_NAME google
 ENV ANSWER **None**
 ENV ANSWER_HASH **None**
+ENV PORT 81
 #ENV SSLCert **None**
 #ENV SSLKEY **None**
 #ENV SSLChain **None**
@@ -27,7 +28,7 @@ RUN pip3 install -r https://raw.githubusercontent.com/aploium/zmirror/master/req
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/apache2 && \
     apt-key update && apt-get update && apt-get upgrade -y && \
     apt-get install -y apache2 && \
-    a2enmod rewrite mime include headers filter expires deflate autoindex setenvif ssl http2 && \
+    a2enmod rewrite mime include headers filter expires deflate autoindex setenvif && \
     apt-get install -y libapache2-mod-wsgi-py3
 
 RUN apt-get install -y net-tools iputils-ping
@@ -53,15 +54,16 @@ ADD zmirror-apache-boilerplate.conf /etc/apache2/conf-enabled/zmirror-apache-boi
 #ADD apache2-http.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
 #ADD no-ip-access.conf /etc/apache2/sites-enabled/no-ip-access.conf
 ADD zmirror_google.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
+ADD ports.conf /etc/apache2/ports.conf
 
 
 ADD ENTRY.sh /
 RUN chmod a+x /ENTRY.sh
 
-VOLUME ["/etc/letsencrypt"]
+#VOLUME ["/etc/letsencrypt"]
 
 # PORTS
-EXPOSE 81
+EXPOSE ${PORT}
 
 ENTRYPOINT ["/ENTRY.sh"]
 
