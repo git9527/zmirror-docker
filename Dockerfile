@@ -28,7 +28,7 @@ RUN pip3 install -r https://raw.githubusercontent.com/aploium/zmirror/master/req
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/apache2 && \
     apt-key update && apt-get update && apt-get upgrade -y && \
     apt-get install -y apache2 && \
-    a2enmod rewrite mime include headers filter expires deflate autoindex setenvif && \
+    a2enmod rewrite mime include headers filter expires deflate autoindex setenvif ssl http2 && \
     apt-get install -y libapache2-mod-wsgi-py3
 
 RUN apt-get install -y net-tools iputils-ping
