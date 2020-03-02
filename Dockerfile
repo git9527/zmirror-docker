@@ -61,7 +61,7 @@ RUN chmod a+x /ENTRY.sh
 VOLUME ["/etc/letsencrypt"]
 
 # PORTS
-EXPOSE 80
+EXPOSE 81
 
 ENTRYPOINT ["/ENTRY.sh"]
 
