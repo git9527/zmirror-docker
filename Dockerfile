@@ -7,6 +7,7 @@ ENV DOMAIN **None**
 ENV MIRROR_NAME google
 ENV ANSWER **None**
 ENV ANSWER_HASH **None**
+ENV PORT 81
 #ENV SSLCert **None**
 #ENV SSLKEY **None**
 #ENV SSLChain **None**
@@ -53,15 +54,16 @@ ADD zmirror-apache-boilerplate.conf /etc/apache2/conf-enabled/zmirror-apache-boi
 #ADD apache2-http.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
 #ADD no-ip-access.conf /etc/apache2/sites-enabled/no-ip-access.conf
 ADD zmirror_google.conf /etc/apache2/sites-enabled/zmirror-google-http.conf
+ADD ports.conf /etc/apache2/ports.conf
 
 
 ADD ENTRY.sh /
 RUN chmod a+x /ENTRY.sh
 
-VOLUME ["/etc/letsencrypt"]
+#VOLUME ["/etc/letsencrypt"]
 
 # PORTS
-EXPOSE 81
+EXPOSE ${PORT}
 
 ENTRYPOINT ["/ENTRY.sh"]
 
