@@ -11,6 +11,7 @@ echo "Running with ${DOMAIN}, ${ANSWER}"
 /bin/sed -i "s/{DOMAIN}/${DOMAIN}/g" /var/www/${MIRROR_NAME}/config.py
 /bin/sed -i "s/{ANSWER_HASH}/${ANSWER_HASH}/g" /var/www/${MIRROR_NAME}/config.py
 /bin/sed -i "s/{ANSWER}/${ANSWER}/g" /var/www/${MIRROR_NAME}/config.py
+/bin/sed -i "s/80/81/g" /etc/apache2/ports.conf
 
 /bin/cat /etc/apache2/sites-enabled/zmirror-google-http.conf
 
