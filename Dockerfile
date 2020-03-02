@@ -36,7 +36,7 @@ RUN apt-get install -y net-tools iputils-ping
 #Zmirror installation,如果要安装另外的例如YouTube镜像，请修改此段。
 #Reference https://github.com/aploium/zmirror/wiki/%E5%9C%A8%E4%B8%80%E5%8F%B0VPS%E9%83%A8%E7%BD%B2%E5%A4%9A%E4%B8%AAzmirror%E9%95%9C%E5%83%8F
 RUN cd /var/www && \
-    git clone https://github.com/aploium/zmirror ${MIRROR_NAME} && chown -R www-data.www-data ${MIRROR_NAME} && \
+    git clone https://github.com/git9527/zmirror ${MIRROR_NAME} && chown -R www-data.www-data ${MIRROR_NAME} && \
     wget https://raw.githubusercontent.com/git9527/zmirror-docker/master/google.py -O /var/www/${MIRROR_NAME}/config.py
 
 #Apache2 conf cleaning according to https://github.com/aploium/zmirror-onekey/blob/master/deploy.py
