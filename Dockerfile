@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install tzdata && \cp /usr/share/zoneinfo/Asia/Sha
 
 #推荐安装的cChardet fastcache需要安装python3-dev和build-essential
 #RUN pip3 install -U flask requests distro chardet cchardet fastcache lru-dict
-RUN pip3 install -r https://raw.githubusercontent.com/aploium/zmirror/master/requirements.txt
+RUN pip3 install -r https://raw.githubusercontent.com/git9527/zmirror-docker/master/requirements.txt
 
 #Apache2 installation。 "LC_ALL=C.UTF-8"必须添加，要不然apt-key获取失败会导致后续很多错误。
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/apache2 && \
